@@ -23,6 +23,7 @@ module.exports = function(app) {
       var password = req.sanitize('password').trim();
       if(user == auth.user && password == auth.password) {
         req.session.user = user;
+        res.redirect("/admin");
       } else {
         res.redirect('https://baidu.com');
       }
